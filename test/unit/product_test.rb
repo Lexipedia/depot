@@ -68,4 +68,12 @@ test "image url" do
   
 end
 
+  test "title must be ten characters long" do
+    product = Product.new(title:       "xxx",
+                          description: "yyy", 
+                          price:       1, 
+                          image_url:   "fred.gif")
+    validates :title, :length => 1..10
+  end
+
 end
